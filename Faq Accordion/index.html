@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/mobile-design.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz@10..72&family=Figtree:ital,wght@0,300..900;1,300..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Lexend+Deca:wght@100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <title> FAQ accordion</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Work Sans", sans-serif;
+    }
+
+    body{
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: hsl(275, 100%, 97%);
+      background-image: url(images/background-pattern-desktop.svg);
+      background-repeat: no-repeat;
+    }
+
+    article{
+      width: 40%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      border-radius: 16px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    }
+
+    header{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    header h1{
+      font-size: 2.5rem;
+      color: hsl(292, 42%, 14%);
+      font-weight: 800;
+    }
+
+    .question1{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: hsl(292, 42%, 14%);
+    }
+
+    .question{
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .question:hover{
+      color: hsl(281, 83%, 54%);
+      font-weight: 700;
+    }
+
+    .ans{
+     color: hsl(276, 18%, 60%);
+      font-size: 0.8rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin: 10px 0px;
+    }
+
+    hr{
+      height: 1px;
+      border: none; 
+      background-color: aliceblue;
+      margin: 16px 0;
+    }
+
+    .minus{
+      display: none;
+    }
+
+    .ans{
+      display: none;
+      margin-top: 20px;
+    }
+
+    #a{
+      display: block;
+    }
+
+    #m{
+      display: block;
+    }
+
+    #p{
+      display: none;
+    }
+
+    @media(max-width: 768px) {
+
+      body{
+        background-image: url(images/background-pattern-mobile.svg);
+      }
+
+      article{
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <header>
+      <img src="images/icon-star.svg" alt="icon-star">
+      <h1>FAQs</h1>
+    </header>
+
+    <div class="question1">
+      <p class="question">
+        What is Frontend Mentor, and how will it help me?
+      </p>
+      <img src="images/icon-minus.svg" alt="icon-minus" class="minus" id="m">
+      <img src="images/icon-plus.svg" alt="icon-plus"  class="plus" id="p">
+    </div>
+    <p class="ans" id="a">
+        Frontend Mentor offers realistic coding challenges to help developers improve their 
+        frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+        all levels and ideal for portfolio building.
+      </p>
+    <hr>
+    <div class="question1">
+      <p class="question">
+        Is Frontend Mentor free?
+      </p>
+      <img src="images/icon-plus.svg" alt="icon-plus" class="plus">
+      <img src="images/icon-minus.svg" alt="icon-minus" class="minus">
+    </div>
+    <p class="ans">
+       Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+      option providing access to a range of projects suitable for all skill levels.
+    </p>
+
+    <hr>
+    <div class="question1">
+      <p class="question">
+        Can I use Frontend Mentor projects in my portfolio?
+      </p>
+      <img src="images/icon-plus.svg" alt="icon-plus"  class="plus">
+       <img src="images/icon-minus.svg" alt="icon-minus" class="minus"> 
+    </div>
+    <p class="ans">
+      Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+      way to showcase your skills to potential employers!
+    </p>
+    <hr>
+
+    <div class="question1">
+      <p class="question">
+        How can I get help if I'm stuck on a challenge?
+      </p>
+      <img src="images/icon-plus.svg" alt="icon-plus"  class="plus">
+      <img src="images/icon-minus.svg" alt="icon-minus" class="minus">
+    </div>
+    <p class="ans">
+      The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+      channel where you can ask questions and seek support from other community members.
+    </p>
+  </article>
+
+  <script>
+  const questions = document.querySelectorAll(".question1");
+  
+  questions.forEach((item) => {
+
+    const question = item.querySelector(".question");
+    const ans = item.nextElementSibling;
+    const plusIcon = item.querySelector(".plus");
+    const minusIcon = item.querySelector(".minus");
+
+    item.addEventListener("click", () => {
+      const isVisable = ans.style.display === "block";
+
+      document.querySelectorAll(".ans").forEach(ans => ans.style.display = "none");
+      document.querySelectorAll(".plus").forEach(plus => plus.style.display = "inline");
+      document.querySelectorAll(".minus").forEach(minus => minus.style.display = "none");
+
+      if(!isVisable){
+      ans.style.display = "block";
+      plusIcon.style.display = "none";
+      minusIcon.style.display = "inline";
+    }
+    });
+  });
+
+</script>
+
+</body>
+</html>
