@@ -58,7 +58,7 @@ This project was created as a practice challenge from **Frontend Mentor**, desig
 
 **Damani Sahu**  
 🎯 Aspiring Frontend Developer  
-📬 [misseym46@gmail.com](mailto:misseym46@gmail.com)
+📬 Linkedin:- https://www.linkedin.com/in/damanisahulinkdin/
 
 ---
 
