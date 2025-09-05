@@ -45,7 +45,7 @@ This project replicates a common user interface feature where users can expand o
 
 ## 🚀 Live Demo
 
-**👉 Click Here to View Live]:- https://project-faq-accordion.netlify.app/**  
+**👉 Click Here to View Live:- https://project-faq-accordion.netlify.app/**  
 ---
 
 ## 🎯 Purpose
